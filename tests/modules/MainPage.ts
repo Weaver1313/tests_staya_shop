@@ -73,11 +73,11 @@ export class MainPage {
   }
 
   async checkHeaderElement() {
-    this.elements.forEach(({ locator, name }) => {
+    for (const { locator, name } of this.elements) {
       test.step(`Проверка отображения ${name}`, async () => {
         await expect.soft(locator(this.page)).toBeVisible();
       });
-    });
+    }
   }
 
   async checkHrefHeader() {
