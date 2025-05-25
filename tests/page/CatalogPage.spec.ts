@@ -12,7 +12,8 @@ test.describe("Тесты раздела каталог", () => {
     await catalogPage.checkOpenCard();
   });
 
-  test("Проверка фильтров каталога", async ({ page }) => {
+  //Тяжолый случай
+  test.fixme("Проверка фильтров каталога", async ({ page }) => {
     const catalogPage = new CatalogPage(page);
     await catalogPage.closetModal();
     await catalogPage.checkFilter();

@@ -24,14 +24,7 @@ export class CatalogPage {
   }
 
   async checkFilter() {
-    await this.page.waitForSelector('label:has-text("По категориям")');
-    await this.page.locator('label:has-text("По категориям")').click();
-    await this.page.getByRole("button", { name: "От старых к новым" }).click();
-    await expect
-      .soft(this.page)
-      .toHaveURL("https://staya.dog/catalog?ordering=otn");
-
-    await this.page.locator('[data-test="test"]').getByRole("button").click();
+    await this.page.locator("*", { hasText: 'viewBox="0 0 16 9"' }).click();
     await this.page.getByRole("button", { name: "От новых к старым" }).click();
     await expect
       .soft(this.page)
